@@ -1,4 +1,4 @@
-package com.example.estoque.model.controller;
+package com.example.estoque.controller;
 
 
 import com.example.estoque.model.Produto;
