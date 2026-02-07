@@ -22,6 +22,8 @@ public class MovimentacaoEstoque {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    private Long codigoDoProduto;
+
     private String produto;
 
     @Enumerated(EnumType.STRING)
