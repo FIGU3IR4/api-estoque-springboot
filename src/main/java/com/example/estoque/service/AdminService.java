@@ -17,18 +17,7 @@ public class AdminService {
 
     }
 
-    public boolean fazerLogin(Admin admin) {
 
-        Optional<Admin> adminBanco = repository.findByLogin(admin.getLogin());
-
-        if (adminBanco.isPresent()) {
-            return adminBanco.get()
-                    .getSenha()
-                    .equals(admin.getSenha());
-        }
-
-        return false;
-    }
 
     public  Admin createAdmin(Admin admin){
         return repository.save(admin);

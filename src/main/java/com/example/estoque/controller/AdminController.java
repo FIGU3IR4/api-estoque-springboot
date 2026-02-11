@@ -25,8 +25,5 @@ public class AdminController {
     }
 
 
-    @PostMapping("/in")
-    public boolean fazerLogin(@RequestBody Admin admin){
-        return  service.fazerLogin(admin);
-    }
+
 }

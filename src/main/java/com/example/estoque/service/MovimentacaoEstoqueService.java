@@ -39,11 +39,11 @@ public class MovimentacaoEstoqueService {
                 throw new RuntimeException("Estoque insuficiente");
             }
 
-
+        else {
             produto.setQuantidade(
                     produto.getQuantidade() - movimentacao.getQuantidade()
             );
-        }
+        }}
 
         produto.setQuantidade(
                 produto.getQuantidade() + movimentacao.getQuantidade()
@@ -52,6 +52,11 @@ public class MovimentacaoEstoqueService {
         produtoRepository.save(produto);
 
         return repository.save(movimentacao);
+    }
+
+    public MovimentacaoEstoque getMovimentacaoByid(Long id){
+        return repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Movimentação não encontrada com id: " + id));
     }
 
 }

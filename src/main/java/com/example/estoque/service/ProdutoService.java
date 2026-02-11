@@ -3,10 +3,10 @@ package com.example.estoque.service;
 import com.example.estoque.excessoes.ProdutoNaoEncotrado;
 import com.example.estoque.model.Produto;
 import com.example.estoque.repository.ProdutoRepository;
-import org.apache.el.stream.Optional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProdutoService {
@@ -37,5 +37,17 @@ public class ProdutoService {
     }
 
 
+    public Double valorTotalProduto(Long codigoProduto){
+
+        Produto produto= repository.findByCodigoProduto(codigoProduto).orElseThrow();
+
+
+
+        return  produto.getValor()*produto.getQuantidade();
+
+
+
+
+    }
 
 }

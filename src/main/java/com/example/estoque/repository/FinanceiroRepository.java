@@ -1,12 +1,12 @@
 package com.example.estoque.repository;
 
-import com.example.estoque.model.MovimentacaoEstoque;
+import com.example.estoque.model.Financeiro;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface MovimentacaoEstoqueRepository extends JpaRepository<MovimentacaoEstoque, Long> {
+public interface FinanceiroRepository extends JpaRepository<Financeiro, Long> {
 
 
 

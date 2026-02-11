@@ -36,8 +36,15 @@ public class ProdutoController {
         service.deleteProdutoByid(id);
     }
 
-    @GetMapping("codigo/{codigo}")
+    @GetMapping("/{codigo}")
     public Produto findByCodigo(@PathVariable("codigo") Long codigo){
         return service.findByCodigo(codigo);
     }
+
+    @GetMapping("/valor/{codigoProduto}")
+    public  Double findValorTotalBycodigo(@PathVariable Long codigoProduto){
+        return service.valorTotalProduto(codigoProduto);
+
+    }
+
 }
